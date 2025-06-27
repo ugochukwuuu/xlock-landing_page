@@ -20,5 +20,10 @@ document.querySelector('#app').innerHTML = `
     </p>
   </div>
 `
+const signInBtn = document.querySelector('#disabledSignIn')
 
 setupCounter(document.querySelector('#counter'))
+
+signInBtn.addEventListener("click",()=>{
+  alert('clicked')
+})
