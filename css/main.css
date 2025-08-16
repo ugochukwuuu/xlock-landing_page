@@ -74,13 +74,13 @@ p {
   color: var(--color-light-gray);
 }
 
-a {
+a,.no-signIn-info {
   color: var(--color-gold);
   text-decoration: none;
   transition: var(--transition-fast);
 }
 
-a:hover {
+a:hover, .no-signIn-info:hover {
   color: var(--color-gold-light);
 }
 

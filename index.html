@@ -240,12 +240,12 @@
                   <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password"
                     required>
                 </div>
-                <button type="submit" class="btn btn-primary w-100">Register</button>
+                <button type="submit" id="registerButton" class="btn btn-primary w-100">Register</button>
               </form>
             </div>
-            <div class="modal-footer">
+            <!-- <div class="modal-footer">
               <p class="text-center w-100">Already have an account? <a href="#">Sign In</a></p>
-            </div>
+            </div> -->
           </div>
         </div>
         </div>
@@ -254,53 +254,14 @@
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content glassmorphism">
             <div class="modal-body">
-              <p>Sign in is temporarily unavailable. If you've registered an account with us, please bear with us as we finalize the main
+              <p class="no-signIn-info">Sign in is temporarily unavailable. If you've registered an account with us, please bear with us as we finalize the main
               website. If not, please register an account to access our services once they're live.</p>
             </div>
-            <!-- <div class="modal-footer">
-              <p class="text-center w-100">Already have an account? <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal"
-                  data-bs-target="#signinModal">Sign In</a></p>
-            </div> -->
           </div>
         </div>
       </div>
 
-      <!-- <div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="signinModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="signinModalLabel">Sign In to Xlock</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div class="container d-flex flex-column justify-content-center align-items-center">
-                <h2>Create Your Xlock Account</h2>
-                <form id="registerForm">
-                  <div class="form-group">
-                    <label for="fullName">Full Name (Optional)</label>
-                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
-                  </div>
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Create a password" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="confirmPassword">Confirm Password</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
-                  </div>
-                  <button type="submit">Register</button>
-                  <div class="link">
-                    <p>Already have an account? <a href="/signin">Sign In</a></p>
-                  </div>
-                </form>  </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
+ 
       </div>
     
 
@@ -309,5 +270,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script type="module" src="./js/main.js"></script>
+    <script type = "module" src = "./js/supabaseRegister.js"></script>
+    <script  src = "./js/register.js"></script>
   </body>
 </html>
