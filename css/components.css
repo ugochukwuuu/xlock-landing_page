@@ -73,11 +73,12 @@
 }
 
 /* Card Hover Effects */
-.service-item, 
-.testimonial, 
+.service-item,
+.testimonial,
 .stat-item {
-  transition: transform var(--transition-fast), 
-              box-shadow var(--transition-fast);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .service-item:hover,
@@ -104,7 +105,7 @@
 }
 
 .custom-list li::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 10px;

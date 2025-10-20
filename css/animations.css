@@ -159,7 +159,12 @@
 
 /* Shimmer effect for loading states */
 .shimmer {
-  background: linear-gradient(to right, var(--color-dark) 8%, var(--color-dark-gray) 18%, var(--color-dark) 33%);
+  background: linear-gradient(
+    to right,
+    var(--color-dark) 8%,
+    var(--color-dark-gray) 18%,
+    var(--color-dark) 33%
+  );
   background-size: 1000px 100%;
   animation: shimmer 2s infinite linear;
 }
@@ -167,7 +172,9 @@
 /* Scroll animations */
 .animate-on-scroll {
   opacity: 0;
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .animate-on-scroll.fade-up {
@@ -235,7 +242,9 @@
 
 /* Custom animations for specific elements */
 .logo-icon {
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .logo:hover .logo-icon {
@@ -244,7 +253,7 @@
 }
 
 .service-image::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;

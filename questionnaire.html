@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xlock Questionnaire</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #1a1a1a;
+        color: #fff;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      .error {
+        color: #ff0000;
+        font-size: 0.9rem;
+      }
+
+      .step {
+        display: none;
+      }
+
+      .step.active {
+        display: block;
+      }
+
+      .btn-nav {
+        margin-right: 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Xlock Investment Preferences</h2>
+      <p>Please complete this quick form to help us tailor your investments.</p>
+      <div class="progress mb-3">
+        <div
+          id="progressBar"
+          class="progress-bar"
+          role="progressbar"
+          style="width: 33%"
+          aria-valuenow="33"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        ></div>
+      </div>
+      <form id="questionnaireForm">
+        <!-- Step 1 -->
+        <div class="step active" id="step1">
+          <div class="form-group mb-3">
+            <label
+              >1. Which asset types are you interested in? (Select at least
+              one)</label
+            >
+            <div>
+              <input
+                type="checkbox"
+                id="crypto"
+                name="assets[]"
+                value="Crypto"
+              />
+              <label for="crypto">Crypto</label><br />
+              <input
+                type="checkbox"
+                id="stocks"
+                name="assets[]"
+                value="Stocks"
+              />
+              <label for="stocks">Stocks</label><br />
+              <input type="checkbox" id="forex" name="assets[]" value="Forex" />
+              <label for="forex">Forex</label><br />
+              <input
+                type="checkbox"
+                id="gold"
+                name="assets[]"
+                value="Gold/Precious Metals"
+              />
+              <label for="gold">Gold/Precious Metals</label><br />
+              <input
+                type="checkbox"
+                id="bonds"
+                name="assets[]"
+                value="Bonds/Fixed Income"
+              />
+              <label for="bonds">Bonds/Fixed Income</label><br />
+              <input
+                type="checkbox"
+                id="realEstate"
+                name="assets[]"
+                value="Real Estate Funds"
+              />
+              <label for="realEstate">Real Estate Funds</label><br />
+              <input
+                type="checkbox"
+                id="otherAssets"
+                name="assets[]"
+                value="Other"
+              />
+              <label for="otherAssets">Other</label>
+              <input
+                type="text"
+                id="otherAssetsText"
+                name="otherAssetsText"
+                placeholder="Please specify"
+                style="display: none"
+                class="form-control mt-2"
+              />
+            </div>
+            <div id="assetsError" class="error"></div>
+          </div>
+          <div class="form-group mb-3">
+            <label
+              >2. On a scale of 1-10, how comfortable are you with investment
+              risk?</label
+            >
+            <input
+              type="range"
+              id="riskTolerance"
+              name="riskTolerance"
+              min="1"
+              max="10"
+              value="5"
+              class="form-range"
+            />
+            <div class="slider-value">
+              Value: <span id="riskValue">5</span> (1 = Very low, 10 = High)
+            </div>
+            <div id="riskError" class="error"></div>
+          </div>
+          <div class="form-group mb-3">
+            <label
+              >3. What is your expected time frame for this investment?</label
+            >
+            <select
+              id="investmentHorizon"
+              name="investmentHorizon"
+              class="form-control"
+            >
+              <option value="">Select an option</option>
+              <option value="Short-term (less than 1 year)">
+                Short-term (less than 1 year)
+              </option>
+              <option value="Medium-term (1-5 years)">
+                Medium-term (1-5 years)
+              </option>
+              <option value="Long-term (more than 5 years)">
+                Long-term (more than 5 years)
+              </option>
+            </select>
+            <div id="horizonError" class="error"></div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step" id="step2">
+          <!-- Similar structure for questions 4-6, as in my previous proposal -->
+          <div class="form-group mb-3">
+            <label
+              >4. What are your primary goals for this investment? (Select up to
+              3)</label
+            >
+            <div>
+              <input
+                type="checkbox"
+                id="buildWealth"
+                name="goals[]"
+                value="Build wealth/grow capital"
+              />
+              <label for="buildWealth">Build wealth/grow capital</label><br />
+              <input
+                type="checkbox"
+                id="passiveIncome"
+                name="goals[]"
+                value="Generate passive income"
+              />
+              <label for="passiveIncome">Generate passive income</label><br />
+              <input
+                type="checkbox"
+                id="retirement"
+                name="goals[]"
+                value="Save for retirement"
+              />
+              <label for="retirement">Save for retirement</label><br />
+              <input
+                type="checkbox"
+                id="education"
+                name="goals[]"
+                value="Fund education or major purchase"
+              />
+              <label for="education">Fund education or major purchase</label
+              ><br />
+              <input
+                type="checkbox"
+                id="inflationHedge"
+                name="goals[]"
+                value="Hedge against inflation"
+              />
+              <label for="inflationHedge">Hedge against inflation</label><br />
+              <input
+                type="checkbox"
+                id="diversify"
+                name="goals[]"
+                value="Diversify existing portfolio"
+              />
+              <label for="diversify">Diversify existing portfolio</label><br />
+              <input
+                type="checkbox"
+                id="otherGoals"
+                name="goals[]"
+                value="Other"
+              />
+              <label for="otherGoals">Other</label>
+              <input
+                type="text"
+                id="otherGoalsText"
+                name="otherGoalsText"
+                placeholder="Please specify"
+                style="display: none"
+                class="form-control mt-2"
+              />
+            </div>
+            <div id="goalsError" class="error"></div>
+          </div>
+          <div class="form-group mb-3">
+            <label
+              >5. How would you describe your experience with investing?</label
+            >
+            <div>
+              <input
+                type="radio"
+                id="beginner"
+                name="experience"
+                value="Beginner"
+              />
+              <label for="beginner">Beginner</label><br />
+              <input
+                type="radio"
+                id="intermediate"
+                name="experience"
+                value="Intermediate"
+              />
+              <label for="intermediate">Intermediate</label><br />
+              <input
+                type="radio"
+                id="expert"
+                name="experience"
+                value="Expert"
+              />
+              <label for="expert">Expert</label>
+            </div>
+            <div id="experienceError" class="error"></div>
+          </div>
+          <div class="form-group mb-3">
+            <label
+              >6. Approximately how much do you plan to invest initially?</label
+            >
+            <select
+              id="investmentAmount"
+              name="investmentAmount"
+              class="form-control"
+            >
+              <option value="">Select an option</option>
+              <option value="Less than ₦100,000">Less than ₦100,000</option>
+              <option value="₦100,000 - ₦500,000">₦100,000 - ₦500,000</option>
+              <option value="₦500,000 - ₦1,000,000">
+                ₦500,000 - ₦1,000,000
+              </option>
+              <option value="More than ₦1,000,000">More than ₦1,000,000</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+            <div id="amountError" class="error"></div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step" id="step3">
+          <div class="form-group mb-3">
+            <label
+              >7. Do you have any preferences or restrictions for your
+              investments? (Select all that apply)</label
+            >
+            <div>
+              <input
+                type="checkbox"
+                id="avoidIndustries"
+                name="restrictions[]"
+                value="Avoid certain industries"
+              />
+              <label for="avoidIndustries"
+                >Avoid certain industries (e.g., tobacco, weapons)</label
+              ><br />
+              <input
+                type="checkbox"
+                id="esg"
+                name="restrictions[]"
+                value="Focus on sustainable/ESG"
+              />
+              <label for="esg">Focus on sustainable/ESG investments</label
+              ><br />
+              <input
+                type="checkbox"
+                id="halal"
+                name="restrictions[]"
+                value="Halal-compliant options"
+              />
+              <label for="halal">Halal-compliant options</label><br />
+              <input
+                type="checkbox"
+                id="noPrefs"
+                name="restrictions[]"
+                value="No preferences"
+              />
+              <label for="noPrefs">No preferences</label>
+            </div>
+            <div id="restrictionsError" class="error"></div>
+          </div>
+          <div class="form-group mb-3">
+            <label>8. Is there anything else we should know? (Optional)</label>
+            <textarea
+              id="comments"
+              name="comments"
+              class="form-control"
+              rows="3"
+              placeholder="Additional comments"
+            ></textarea>
+            <div id="commentsError" class="error"></div>
+          </div>
+        </div>
+      </form>
+      <div class="d-flex justify-content-between mt-3">
+        <button
+          id="prevBtn"
+          class="btn btn-secondary btn-nav"
+          style="display: none"
+        >
+          Previous
+        </button>
+        <button id="nextBtn" class="btn btn-primary">Next</button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./js/questionnaire.js"></script>
+  </body>
+</html>
