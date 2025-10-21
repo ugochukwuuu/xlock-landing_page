@@ -247,7 +247,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="registerForm">
+        <form id="registerForm" method="post" action="javascript:void(0);">
           <div class="form-group mb-3">
             <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name"
               required>
@@ -284,7 +284,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form id="loginForm">
+        <form id="loginForm" method="post" action="javascript:void(0);">
           <div class="form-group mb-3">
             <input type="email" class="form-control" id="lemail" name="email" placeholder="Enter your email" required>
             <div class="error-message" id="emailError"></div>
@@ -330,7 +330,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
       <script type="module" src="./js/main.js"></script>
-    <script type="module" src="./js/supabaseSessionCheck.js"></script>
+    <!-- <script type="module" src="./js/supabaseSessionCheck.js"></script> -->
     <script type="module" src="./js/notification.js"></script>
     <script type="module" src="./js/auth.js"></script>
   </body>
